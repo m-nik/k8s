@@ -12,14 +12,14 @@ services:
       - "8083:8083"
       - "8084:8084"
 ```
-# K8s cluster importants repos
+### K8s cluster importants repos
 - https://quay.io
 - https://registry.k8s.io
 - https://registry-1.docker.io
   
 Map each one on a port
 
-# Nginx sample config
+### Nginx sample config
 ```nginx
 server{
 	server_name k8s.site.info;
@@ -39,13 +39,7 @@ server{
     listen 80;
 }
 ```
-# Upload helm charts to a hosted helm repo
-```sh
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm pull bitnami/redis --version 20.6.1
-curl -u user:password https://nexus.site.info/repository/helm-charts/ --upload-file redis-20.6.1.tgz 
-```
-# Add each one to containerd registries
+### Add each one to containerd registries
 ```toml
 server = "https://quay.io"
 [host."https://quay.site.info"]
@@ -53,3 +47,12 @@ server = "https://quay.io"
   skip_verify = false
   override_path = false
 ```
+
+
+# Upload helm charts to a hosted helm repo
+```sh
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm pull bitnami/redis --version 20.6.1
+curl -u user:password https://nexus.site.info/repository/helm-charts/ --upload-file redis-20.6.1.tgz 
+```
+
