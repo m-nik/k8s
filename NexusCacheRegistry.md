@@ -16,7 +16,9 @@ services:
 - https://quay.io
 - https://registry.k8s.io
 - https://registry-1.docker.io
+  
 Map each one on a port
+
 # Nginx sample config
 ```nginx
 server{
