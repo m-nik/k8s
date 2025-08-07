@@ -41,3 +41,6 @@ spec:
     image: nginx
   priorityClassName: low-priority
 ```
+
+
+<https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption>
