@@ -4,6 +4,10 @@ kubectl get pc
 kubectl get priorityclasses
 ```
 
+### ranges
+Over 2,000,000,000 ==> system-cluster-critical
+Between 1,000,000,000 and -2,000,000,000 == > user defined
+
 ### define
 ```yaml
 apiVersion: scheduling.k8s.io/v1
