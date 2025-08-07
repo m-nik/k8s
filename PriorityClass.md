@@ -29,3 +29,15 @@ preemptionPolicy: PreemptLowerPriority
 value: 1000000
 ```
 
+### priorityClassName in pod definition
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: low-prio-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  priorityClassName: low-priority
+```
