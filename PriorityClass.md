@@ -43,4 +43,9 @@ spec:
 ```
 
 
+### get priorityClassName in pod list
+```sh
+kubectl get pods -o custom-columns="NAME:.metadata.name,PRIORITY:.spec.priorityClassName"
+```
+
 <https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption>
