@@ -32,3 +32,7 @@ status:
 kubectl get hpa
 kubectl get hpa --watch
 ```
+
+
+# Vertical Pod Autoscaling (VPA)
+<https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler>
