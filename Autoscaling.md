@@ -67,3 +67,10 @@ spec:
       - memory
     updateMode: Recreate
 ```
+
+
+### top!
+```sh
+kubectl top pod
+kubectl top node
+```
