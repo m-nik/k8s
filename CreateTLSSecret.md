@@ -1,4 +1,4 @@
 
 ```sh
-kubectl create secret -n webhook-demo tls webhook-server-tls --key /path/to/tls.key --cert /path/to/tls.crt
+kubectl create secret tls selected-name-tls --key /path/to/tls.key --cert /path/to/tls.crt
 ```
