@@ -46,7 +46,12 @@ spec:
 ### HostPath
 Using the hostPath volume type presents many security risks. If you can avoid using a hostPath volume, you should. For example, define a local PersistentVolume, and use that instead.
 ```yaml
-
+  volumes:
+  - name: example-volume
+    # mount /data/foo, but only if that directory already exists
+    hostPath:
+      path: /data/foo # directory location on host
+      type: Directory # this field is optional
 ```
 
 <https://kubernetes.io/docs/concepts/storage/volumes/>
