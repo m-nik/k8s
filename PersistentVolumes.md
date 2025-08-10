@@ -76,5 +76,11 @@ spec:
     requests:
       storage: 3Gi
 ```
+```yaml
+  volumes:
+    - name: log-path
+      persistentVolumeClaim:
+        claimName: log-path-storage
+```
 
 <https://kubernetes.io/docs/concepts/storage/volumes/>
