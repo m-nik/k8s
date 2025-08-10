@@ -43,4 +43,25 @@ Using the hostPath volume type presents many security risks. If you can avoid us
       type: Directory # this field is optional
 ```
 
+
+### Persistent Volumes
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: task-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data"
+```
+
+
+
 <https://kubernetes.io/docs/concepts/storage/volumes/>
