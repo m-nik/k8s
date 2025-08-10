@@ -62,6 +62,19 @@ spec:
     path: "/mnt/data"
 ```
 
-
+### Persistent Volume Claims
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pv-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+```
 
 <https://kubernetes.io/docs/concepts/storage/volumes/>
