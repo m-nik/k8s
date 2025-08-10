@@ -21,3 +21,7 @@ spec:
             path: log_level.conf
 ```
 
+### HostPath
+```
+
+```
