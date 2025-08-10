@@ -44,7 +44,8 @@ spec:
 ```
 
 ### HostPath
-```
+Using the hostPath volume type presents many security risks. If you can avoid using a hostPath volume, you should. For example, define a local PersistentVolume, and use that instead.
+```yaml
 
 ```
 
