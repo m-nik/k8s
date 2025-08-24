@@ -10,15 +10,11 @@ server = "https://docker.io"
 /etc/containerd/certs.d/registry.k8s.io/hosts.toml
 ```toml
 server = "https://registry.k8s.io"
-[host."https://registry.zidev.ir/v2/k8s"]
+[host."https://registry.site.io/v2/k8s"]
   capabilities = ["pull","resolve"]
   skip_verify = false
   override_path = true
 ```
-
-
-
-
 
 
 
