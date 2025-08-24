@@ -1,5 +1,6 @@
 # Use harbor as containerd mirror registry
 <https://github.com/containerd/containerd/blob/main/docs/hosts.md#override_path-field>
+
 /etc/containerd/certs.d/docker.io/hosts.toml
 ```toml
 server = "https://docker.io"
