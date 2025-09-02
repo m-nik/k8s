@@ -84,3 +84,12 @@ spec:
 ```
 
 <https://kubernetes.io/docs/concepts/storage/volumes/>
+
+
+
+
+
+### List pvcs of a node
+```sh
+kubectl get pvc -A -o jsonpath='{range .items[?(@.metadata.annotations.volume\.kubernetes\.io/selected-node=="worker2")]}{.metadata.name}{"\n"}{end}'
+```
