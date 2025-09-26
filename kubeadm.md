@@ -23,3 +23,10 @@ use `--image-repository` to speedup pulling k8s images in a local network
 kubeadm config print init-defaults > kubeadm-config.yaml
 kubeadm init --config kubeadm-config.yaml
 ```
+
+
+## list and pull images
+```sh
+kubeadm config images list
+kubeadm config images pull
+```
