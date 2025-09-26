@@ -30,3 +30,50 @@ kubeadm init --config kubeadm-config.yaml
 kubeadm config images list
 kubeadm config images pull
 ```
+
+
+
+## Issue: CoreDNS image and path-based container image registry
+
+```sh
+kubeadm config images list
+  registry.k8s.io/kube-apiserver:v1.33.5
+  registry.k8s.io/kube-controller-manager:v1.33.5
+  registry.k8s.io/kube-scheduler:v1.33.5
+  registry.k8s.io/kube-proxy:v1.33.5
+  registry.k8s.io/coredns/coredns:v1.12.0
+  registry.k8s.io/pause:3.10
+  registry.k8s.io/etcd:3.5.21-0
+```
+When using a path-based container image registry (e.g., Harbor) that adds an extra path, like:
+```
+registry.company.io/k8s
+```
+kubeadm may generate an incorrect CoreDNS image path:
+
+Expected: `registry.company.io/k8s/coredns/coredns:v1.12.0`
+
+Generated: `registry.company.io/k8s/coredns:v1.12.0`
+
+This causes image pull failures. This is a [known issue in kubeadm](https://github.com/kubernetes/kubeadm/issues/2525?utm_source=chatgpt.com)
+
+
+#### Solution
+
+Use a minimal ClusterConfiguration YAML that overrides the CoreDNS image:
+```yaml
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: ClusterConfiguration
+kubernetesVersion: "v1.33.5"
+controlPlaneEndpoint: "10.0.2.15:6443"
+imageRepository: registry.company.io/k8s
+networking:
+  podSubnet: "10.244.0.0/16"
+dns:
+  type: CoreDNS
+  imageRepository: registry.company.io/k8s/coredns
+  imageTag: v1.12.0
+```
+```sh
+sudo kubeadm init --config kubeadm-minimal.yaml --upload-certs
+```
