@@ -55,7 +55,7 @@ Expected: `registry.company.io/k8s/coredns/coredns:v1.12.0`
 
 Generated: `registry.company.io/k8s/coredns:v1.12.0`
 
-This causes image pull failures. This is a [known issue in kubeadm](https://github.com/kubernetes/kubeadm/issues/2525?utm_source=chatgpt.com)
+This causes image pull failures. This is a [known issue in kubeadm](https://github.com/kubernetes/kubeadm/issues/2525)
 
 
 #### Solution
