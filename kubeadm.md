@@ -17,3 +17,9 @@ sudo kubeadm init --apiserver-advertise-address 192.168.11.201 --pod-network-cid
 ```
 
 use `--image-repository` to speedup pulling k8s images in a local network
+
+## Use a config file and override defaults
+```sh
+kubeadm config print init-defaults > kubeadm-config.yaml
+kubeadm init --config kubeadm-config.yaml
+```
