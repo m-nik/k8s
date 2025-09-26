@@ -8,3 +8,9 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 ```
+
+
+## Initialize cluster
+```sh
+sudo kubeadm init --dry-run
+```
