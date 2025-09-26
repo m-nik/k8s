@@ -1,3 +1,16 @@
+
+
+
+### use systemd as cgroup driver
+
+```sh
+sudo mkdir /etc/containerd
+sudo sh -c "containerd config default > /etc/containerd/config.toml"
+sudo cat /etc/containerd/config.toml | grep -i systemd
+sudo sed -i "s/SystemdCgoup = false/SystemdCgroup = true/" /etc/containerd/config.toml
+sudo systemctl restart containerd.service
+```
+
 # Use harbor as containerd mirror registry
 <https://github.com/containerd/containerd/blob/main/docs/hosts.md#override_path-field>
 
