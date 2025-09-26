@@ -15,3 +15,5 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo kubeadm init --dry-run
 sudo kubeadm init --apiserver-advertise-address 192.168.11.201 --pod-network-cidr 10.244.0.0/16 --upload-certs
 ```
+
+use `--image-repository` to speedup pulling k8s images in a local network
