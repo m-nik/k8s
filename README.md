@@ -16,3 +16,8 @@ complete -o default -F __start_kubectl k
 ```sh
 kubectl get pod -A --field-selector spec.nodeName=worker1
 ```
+
+#### Logs since
+```sh
+kubectl logs app --since=1h
+```
