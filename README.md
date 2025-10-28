@@ -9,3 +9,10 @@ alias k="kubectl"
 source <(kubectl completion bash)
 complete -o default -F __start_kubectl k
 ```
+
+
+
+#### Get pods deployed on specific nodes
+```sh
+kubectl get pod -A --field-selector spec.nodeName=worker1
+```
