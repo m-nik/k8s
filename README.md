@@ -21,3 +21,8 @@ kubectl get pod -A --field-selector spec.nodeName=worker1
 ```sh
 kubectl logs app --since=1h
 ```
+
+#### Change context to a non-default namespace
+```
+kubectl config set-context --current --namespace frontend-dev
+```
