@@ -83,7 +83,21 @@ containerd_registries_mirrors:
 ```
 
 
+### Container and Image Prune
+```
+crictl ps -a
+crictl rm $(crictl ps -aq)
 
+crictl images
+crictl rmi --prune
+#OR
+ctr -n k8s.io images prune
+```
+### Container logs
+```
+du -sh /var/log/containers
+du -sh /var/log/pods
+```
 
 
 
