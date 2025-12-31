@@ -20,3 +20,9 @@ k8s/
         ├── frontend/
         └── kustomization.yaml
 ```
+
+
+### Garbage collection
+```
+kubectl apply -k stage --prune -l app-config=secret
+```
