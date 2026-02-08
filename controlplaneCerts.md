@@ -15,12 +15,20 @@ sudo systemctl restart kubelet
 on every master node:
 ```
 openssl x509 -in /var/lib/kubelet/pki/kubelet-client-current.pem -noout -enddate
-crictl ps | grep kube-apiserver
+crictl ps | grep kube-
 sudo mv /etc/kubernetes/manifests/kube-apiserver.yaml /tmp/
+sudo mv /etc/kubernetes/manifests/kube-controller-manager.yaml /tmp/
+sudo mv /etc/kubernetes/manifests/kube-scheduler.yaml /tmp/
 sleep 20
 sudo mv /tmp/kube-apiserver.yaml /etc/kubernetes/manifests/kube-apiserver.yaml
+sudo mv /tmp/kube-controller-manager.yaml /etc/kubernetes/manifests/kube-controller-manager.yaml
+sudo mv /tmp/kube-scheduler.yaml /etc/kubernetes/manifests/kube-scheduler.yaml
 ```
 And then:
 ```
 systemctl restart kubelet.service
+```
+### update kube-config
+```
+cp /etc/kubernetes/admin.conf .kube/config
 ```
