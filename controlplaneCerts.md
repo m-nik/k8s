@@ -12,6 +12,7 @@ sudo systemctl restart kubelet
 ```
 
 ### apply for static pod
+on every master node:
 ```
 openssl x509 -in /var/lib/kubelet/pki/kubelet-client-current.pem -noout -enddate
 
