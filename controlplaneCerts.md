@@ -24,3 +24,7 @@ sleep 20
 sudo mv /tmp/kube-apiserver.yaml /etc/kubernetes/manifests/kube-apiserver.yaml
 crictl ps | grep kube-apiserver
 ```
+And then:
+```
+systemctl restart kubelet.service
+```
