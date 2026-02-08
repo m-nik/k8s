@@ -3,6 +3,7 @@
 on controlplane nodes:
 ```
 sudo kubeadm certs check-expiration
+openssl x509 -in /var/lib/kubelet/pki/kubelet-client-current.pem -noout -enddate
 ```
 
 ### renew
@@ -14,7 +15,6 @@ sudo systemctl restart kubelet
 ### apply for static pod
 on every master node:
 ```
-openssl x509 -in /var/lib/kubelet/pki/kubelet-client-current.pem -noout -enddate
 crictl ps | grep kube-
 sudo mv /etc/kubernetes/manifests/kube-apiserver.yaml /tmp/
 sudo mv /etc/kubernetes/manifests/kube-controller-manager.yaml /tmp/
